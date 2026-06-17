@@ -1,0 +1,27 @@
+# Data acquisition
+sec-edgar-downloader
+
+# RAG framework
+langchain
+langchain-anthropic
+langchain-community
+
+# Vector store (local, no server needed)
+chromadb
+
+# Embeddings (free, runs locally)
+sentence-transformers
+
+# LLM
+anthropic
+
+# Dashboard
+streamlit
+
+# Evaluation
+ragas
+
+# Utilities
+python-dotenv
+pandas
+beautifulsoup4
