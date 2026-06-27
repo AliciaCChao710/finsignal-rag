@@ -21,6 +21,10 @@ streamlit
 # Evaluation — ragas 0.4.x is incompatible with langchain 1.x, so evaluate.py
 # implements faithfulness + context precision directly via the Gemini judge (google-genai above)
 
+# Analysis: TF-IDF baseline (retrieve_tfidf.py, compare_retrievers.py) + LDA topics (src/topics.py)
+scikit-learn
+gensim
+
 # Utilities
 python-dotenv
 pandas

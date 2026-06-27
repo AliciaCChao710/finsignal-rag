@@ -1,0 +1,94 @@
+{
+  "topics": {
+    "0": [
+      "cloud",
+      "market",
+      "revenue",
+      "customers",
+      "impact",
+      "ability",
+      "microsoft",
+      "markets",
+      "adversely",
+      "future"
+    ],
+    "1": [
+      "risk",
+      "management",
+      "revenue",
+      "firm",
+      "information",
+      "segment",
+      "higher",
+      "banking",
+      "driven",
+      "corporate"
+    ],
+    "2": [
+      "credit",
+      "loans",
+      "securities",
+      "fair",
+      "assets",
+      "firm",
+      "losses",
+      "liabilities",
+      "cash",
+      "term"
+    ],
+    "3": [
+      "income",
+      "capital",
+      "expense",
+      "statements",
+      "firm",
+      "assets",
+      "bank",
+      "consolidated",
+      "taxes",
+      "subsidiaries"
+    ],
+    "4": [
+      "stock",
+      "share",
+      "shares",
+      "notes",
+      "executive",
+      "securities",
+      "plan",
+      "preferred",
+      "officer",
+      "corporation"
+    ],
+    "5": [
+      "data",
+      "customers",
+      "security",
+      "software",
+      "internal",
+      "control",
+      "laws",
+      "reporting",
+      "controls",
+      "information"
+    ]
+  },
+  "sector_share": {
+    "tech": {
+      "0": 0.24196168780326843,
+      "1": 0.08095508813858032,
+      "2": 0.1475069671869278,
+      "3": 0.11273354291915894,
+      "4": 0.15839311480522156,
+      "5": 0.25844964385032654
+    },
+    "banks": {
+      "0": 0.08718418329954147,
+      "1": 0.17924341559410095,
+      "2": 0.41059306263923645,
+      "3": 0.15317101776599884,
+      "4": 0.0903090164065361,
+      "5": 0.07949931919574738
+    }
+  }
+}
