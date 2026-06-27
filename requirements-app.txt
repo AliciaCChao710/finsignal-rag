@@ -1,0 +1,10 @@
+# Runtime-only deps for the deployed Streamlit app (Cloud Run image).
+# The app serves queries; it does NOT download/ingest/embed at runtime, so the
+# heavier build-time packages (sec-edgar-downloader, langchain, bs4, pandas)
+# in requirements.txt are intentionally omitted here.
+# Pinned to the versions the chroma_db/ vector store was built with.
+streamlit==1.58.0
+chromadb==1.5.9
+sentence-transformers==5.6.0
+google-genai==2.10.0
+python-dotenv==1.2.2

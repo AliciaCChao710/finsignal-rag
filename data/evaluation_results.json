@@ -1,0 +1,489 @@
+[
+  {
+    "question": "What risks does NVIDIA highlight regarding artificial intelligence?",
+    "sector": "tech",
+    "answer": "The provided passages do not explicitly highlight specific risks that NVIDIA associates with artificial intelligence. While Passage [1] refers to \"Item 1A. Risk Factors\" in the company's 10-K report, the actual risks themselves are not detailed within these provided excerpts [1]. Passage [3] contains a general cautionary statement that forward-looking statements are \"inherently uncertain, and investors are cautioned not to unduly rely upon these statements,\" but this is not a specific risk related to AI technology itself [3].",
+    "faithfulness": 1.0,
+    "context_precision": 0.0,
+    "faithfulness_detail": {
+      "claims": [
+        {
+          "claim": "The provided passages do not explicitly highlight specific risks that NVIDIA associates with artificial intelligence.",
+          "supported": true
+        },
+        {
+          "claim": "Passage [1] refers to \"Item 1A. Risk Factors\" in the company's 10-K report.",
+          "supported": true
+        },
+        {
+          "claim": "The actual risks themselves are not detailed within these provided excerpts [1].",
+          "supported": true
+        },
+        {
+          "claim": "Passage [3] contains a general cautionary statement.",
+          "supported": true
+        },
+        {
+          "claim": "The general cautionary statement in Passage [3] warns that forward-looking statements are \"inherently uncertain, and investors are cautioned not to unduly rely upon these statements.\"",
+          "supported": true
+        },
+        {
+          "claim": "The statement in Passage [3] is not a specific risk related to AI technology itself.",
+          "supported": true
+        }
+      ]
+    },
+    "context_precision_detail": {
+      "verdicts": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  },
+  {
+    "question": "How do banks describe credit risk in their filings?",
+    "sector": "banks",
+    "answer": "Banks describe credit risk primarily as the risk of loss stemming from a client, counterparty, or customer's inability or failure to meet their financial obligations, or a change in their credit profile [1], [4], [5].\n\nBanks are exposed to credit risk through various activities and portfolios, including:\n*   **Consumer businesses** such as home lending, credit cards, auto loans, and business banking [4].\n*   **Wholesale businesses** through underwriting, lending, market-making, hedging, operating services (like cash management and clearing), and securities financing activities [4].\n*   **Wholesale loans** [1].\n*   **Investment securities portfolio** and cash placed with other banks [2], [4].\n\nTo manage and measure credit risk, banks engage in several activities:\n*   **Monitoring and measurement** across all portfolio segments, including transaction and exposure approval [2], [4].\n*   **Defining and maintaining** credit risk policies, procedures, limits, and a policy framework [2].\n*   **Setting** industry and geographic concentration limits, as well as guidelines for credit review and analysis [2].\n*   **Assigning and maintaining** credit approval authorities [2].\n*   **Monitoring and independently assessing** criticized exposures and delinquent loans [2], [6].\n*   **Estimating credit losses**, which involves periodic review and refinement of underlying assumptions, and supporting appropriate credit risk-based capital management [2], [6]. This estimation can include expected recoveries and is made collectively for exposures sharing similar risk characteristics [3].\n*   **Employing various methodologies** for estimating the likelihood of default, which vary based on asset type (e.g., consumer vs. wholesale), risk measurement parameters (e.g., delinquency status, credit score, wholesale risk-rating), and risk management processes [6]. Credit risk measurement is based on the probability of default, the loss severity given a default event, and the exposure at default [6].\n*   **Regular reporting** to senior management, risk committees, and the Board of Directors on aggregate credit exposure, credit quality forecasts, concentration levels, risk profile changes, credit risk trends, and limit exceptions [1]. The appropriateness of the allowance for credit losses is reviewed at least quarterly [1].",
+    "faithfulness": 1.0,
+    "context_precision": 0.7,
+    "faithfulness_detail": {
+      "claims": [
+        {
+          "claim": "Banks describe credit risk primarily as the risk of loss stemming from a client, counterparty, or customer's inability or failure to meet their financial obligations.",
+          "supported": true
+        },
+        {
+          "claim": "Banks describe credit risk primarily as the risk of loss stemming from a client, counterparty, or customer's change in their credit profile.",
+          "supported": true
+        },
+        {
+          "claim": "Banks are exposed to credit risk through consumer businesses such as home lending.",
+          "supported": true
+        },
+        {
+          "claim": "Banks are exposed to credit risk through consumer businesses such as credit cards.",
+          "supported": true
+        },
+        {
+          "claim": "Banks are exposed to credit risk through consumer businesses such as auto loans.",
+          "supported": true
+        },
+        {
+          "claim": "Banks are exposed to credit risk through consumer businesses such as business banking.",
+          "supported": true
+        },
+        {
+          "claim": "Banks are exposed to credit risk through wholesale businesses through underwriting.",
+          "supported": true
+        },
+        {
+          "claim": "Banks are exposed to credit risk through wholesale businesses through lending.",
+          "supported": true
+        },
+        {
+          "claim": "Banks are exposed to credit risk through wholesale businesses through market-making.",
+          "supported": true
+        },
+        {
+          "claim": "Banks are exposed to credit risk through wholesale businesses through hedging.",
+          "supported": true
+        },
+        {
+          "claim": "Banks are exposed to credit risk through wholesale businesses through operating services (like cash management and clearing).",
+          "supported": true
+        },
+        {
+          "claim": "Banks are exposed to credit risk through wholesale businesses through securities financing activities.",
+          "supported": true
+        },
+        {
+          "claim": "Banks are exposed to credit risk through wholesale loans.",
+          "supported": true
+        },
+        {
+          "claim": "Banks are exposed to credit risk through their investment securities portfolio.",
+          "supported": true
+        },
+        {
+          "claim": "Banks are exposed to credit risk through cash placed with other banks.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks monitor and measure credit risk across all portfolio segments.",
+          "supported": true
+        },
+        {
+          "claim": "Monitoring and measurement of credit risk includes transaction and exposure approval.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks define and maintain credit risk policies.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks define and maintain credit risk procedures.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks define and maintain credit risk limits.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks define and maintain a credit risk policy framework.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks set industry concentration limits.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks set geographic concentration limits.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks set guidelines for credit review and analysis.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks assign and maintain credit approval authorities.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks monitor criticized exposures.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks independently assess criticized exposures.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks monitor delinquent loans.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks independently assess delinquent loans.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks estimate credit losses.",
+          "supported": true
+        },
+        {
+          "claim": "Estimating credit losses involves periodic review of underlying assumptions.",
+          "supported": true
+        },
+        {
+          "claim": "Estimating credit losses involves refinement of underlying assumptions.",
+          "supported": true
+        },
+        {
+          "claim": "Estimating credit losses supports appropriate credit risk-based capital management.",
+          "supported": true
+        },
+        {
+          "claim": "Credit loss estimation can include expected recoveries.",
+          "supported": true
+        },
+        {
+          "claim": "Credit loss estimation is made collectively for exposures sharing similar risk characteristics.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks employ various methodologies for estimating the likelihood of default.",
+          "supported": true
+        },
+        {
+          "claim": "Methodologies for estimating the likelihood of default vary based on asset type (e.g., consumer vs. wholesale).",
+          "supported": true
+        },
+        {
+          "claim": "Methodologies for estimating the likelihood of default vary based on risk measurement parameters (e.g., delinquency status, credit score, wholesale risk-rating).",
+          "supported": true
+        },
+        {
+          "claim": "Methodologies for estimating the likelihood of default vary based on risk management processes.",
+          "supported": true
+        },
+        {
+          "claim": "Credit risk measurement is based on the probability of default.",
+          "supported": true
+        },
+        {
+          "claim": "Credit risk measurement is based on the loss severity given a default event.",
+          "supported": true
+        },
+        {
+          "claim": "Credit risk measurement is based on the exposure at default.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks provide regular reporting to senior management on aggregate credit exposure.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks provide regular reporting to risk committees on aggregate credit exposure.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks provide regular reporting to the Board of Directors on aggregate credit exposure.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks provide regular reporting to senior management on credit quality forecasts.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks provide regular reporting to risk committees on credit quality forecasts.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks provide regular reporting to the Board of Directors on credit quality forecasts.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks provide regular reporting to senior management on concentration levels.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks provide regular reporting to risk committees on concentration levels.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks provide regular reporting to the Board of Directors on concentration levels.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks provide regular reporting to senior management on risk profile changes.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks provide regular reporting to risk committees on risk profile changes.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks provide regular reporting to the Board of Directors on risk profile changes.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks provide regular reporting to senior management on credit risk trends.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks provide regular reporting to risk committees on credit risk trends.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks provide regular reporting to the Board of Directors on credit risk trends.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks provide regular reporting to senior management on limit exceptions.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks provide regular reporting to risk committees on limit exceptions.",
+          "supported": true
+        },
+        {
+          "claim": "To manage and measure credit risk, banks provide regular reporting to the Board of Directors on limit exceptions.",
+          "supported": true
+        },
+        {
+          "claim": "The appropriateness of the allowance for credit losses is reviewed at least quarterly.",
+          "supported": true
+        }
+      ]
+    },
+    "context_precision_detail": {
+      "verdicts": [
+        true,
+        false,
+        false,
+        true,
+        true,
+        false
+      ]
+    }
+  },
+  {
+    "question": "Compare the main risks technology companies versus banks emphasise.",
+    "sector": null,
+    "answer": "The provided passages are solely from banks (JPMorgan Chase & Co. and Bank of America) and do not include information from technology companies. Therefore, a comparison of the main risks emphasized by technology companies versus banks cannot be made based on the given passages [1, 2, 3, 4, 5, 6].\n\nHowever, the passages indicate that banks emphasize the following types of risks:\n*   **Strategic risk** is the risk associated with poorly-designed or failed business plans, inadequate response to changes, incorrect assumptions, or ineffective business strategy execution [1, 4].\n*   **Credit and investment risk** is the risk associated with client default, changes in credit profiles, or loss of principal/reduction in expected returns on investments [1]. This includes consumer and wholesale credit risk, and investment portfolio risk [1]. Banks also consider factors like obligor's debt capacity, financial flexibility, earnings, and industry/geography in assessing credit risk [3].\n*   **Market risk** is the risk that changes in market conditions adversely impact the value of assets or liabilities, or negatively impact earnings, particularly in financial instruments [1, 5].\n*   **Liquidity risk** [4].\n*   **Compliance risk** [4].\n*   **Operational risk** [4].\n*   **Reputational risk** [4].\n\nBanks also acknowledge drivers of risks such as the economic environment, regulatory/government policy, competitor/market evolution, business decisions, process/judgment error, deliberate wrongdoing, dysfunctional markets, and natural disasters [1]. They also highlight the importance of effective risk management programs, including managing third-party risks, and anticipating the impact of emerging risks, including the pace of technological changes like AI [6].",
+    "faithfulness": 1.0,
+    "context_precision": 1.0,
+    "faithfulness_detail": {
+      "claims": [
+        {
+          "claim": "The provided passages are solely from banks (JPMorgan Chase & Co. and Bank of America).",
+          "supported": true
+        },
+        {
+          "claim": "The provided passages do not include information from technology companies.",
+          "supported": true
+        },
+        {
+          "claim": "A comparison of the main risks emphasized by technology companies versus banks cannot be made based on the given passages [1, 2, 3, 4, 5, 6].",
+          "supported": true
+        },
+        {
+          "claim": "Strategic risk is the risk associated with poorly-designed business plans.",
+          "supported": true
+        },
+        {
+          "claim": "Strategic risk is the risk associated with failed business plans.",
+          "supported": true
+        },
+        {
+          "claim": "Strategic risk is the risk associated with an inadequate response to changes.",
+          "supported": true
+        },
+        {
+          "claim": "Strategic risk is the risk associated with incorrect assumptions.",
+          "supported": true
+        },
+        {
+          "claim": "Strategic risk is the risk associated with ineffective business strategy execution.",
+          "supported": true
+        },
+        {
+          "claim": "Credit and investment risk is the risk associated with client default.",
+          "supported": true
+        },
+        {
+          "claim": "Credit and investment risk is the risk associated with changes in credit profiles.",
+          "supported": true
+        },
+        {
+          "claim": "Credit and investment risk is the risk associated with loss of principal on investments.",
+          "supported": true
+        },
+        {
+          "claim": "Credit and investment risk is the risk associated with a reduction in expected returns on investments.",
+          "supported": true
+        },
+        {
+          "claim": "Credit and investment risk includes consumer credit risk.",
+          "supported": true
+        },
+        {
+          "claim": "Credit and investment risk includes wholesale credit risk.",
+          "supported": true
+        },
+        {
+          "claim": "Credit and investment risk includes investment portfolio risk.",
+          "supported": true
+        },
+        {
+          "claim": "Banks consider an obligor's debt capacity in assessing credit risk.",
+          "supported": true
+        },
+        {
+          "claim": "Banks consider an obligor's financial flexibility in assessing credit risk.",
+          "supported": true
+        },
+        {
+          "claim": "Banks consider an obligor's earnings in assessing credit risk.",
+          "supported": true
+        },
+        {
+          "claim": "Banks consider the industry in assessing credit risk.",
+          "supported": true
+        },
+        {
+          "claim": "Banks consider geography in assessing credit risk.",
+          "supported": true
+        },
+        {
+          "claim": "Market risk is the risk that changes in market conditions adversely impact the value of assets or liabilities.",
+          "supported": true
+        },
+        {
+          "claim": "Market risk is the risk that changes in market conditions negatively impact earnings.",
+          "supported": true
+        },
+        {
+          "claim": "Market risk particularly impacts financial instruments.",
+          "supported": true
+        },
+        {
+          "claim": "Liquidity risk is a type of risk emphasized by banks.",
+          "supported": true
+        },
+        {
+          "claim": "Compliance risk is a type of risk emphasized by banks.",
+          "supported": true
+        },
+        {
+          "claim": "Operational risk is a type of risk emphasized by banks.",
+          "supported": true
+        },
+        {
+          "claim": "Reputational risk is a type of risk emphasized by banks.",
+          "supported": true
+        },
+        {
+          "claim": "Banks acknowledge the economic environment as a driver of risks.",
+          "supported": true
+        },
+        {
+          "claim": "Banks acknowledge regulatory/government policy as a driver of risks.",
+          "supported": true
+        },
+        {
+          "claim": "Banks acknowledge competitor/market evolution as a driver of risks.",
+          "supported": true
+        },
+        {
+          "claim": "Banks acknowledge business decisions as a driver of risks.",
+          "supported": true
+        },
+        {
+          "claim": "Banks acknowledge process/judgment error as a driver of risks.",
+          "supported": true
+        },
+        {
+          "claim": "Banks acknowledge deliberate wrongdoing as a driver of risks.",
+          "supported": true
+        },
+        {
+          "claim": "Banks acknowledge dysfunctional markets as a driver of risks.",
+          "supported": true
+        },
+        {
+          "claim": "Banks acknowledge natural disasters as a driver of risks.",
+          "supported": true
+        },
+        {
+          "claim": "Banks highlight the importance of effective risk management programs.",
+          "supported": true
+        },
+        {
+          "claim": "Banks highlight the importance of managing third-party risks.",
+          "supported": true
+        },
+        {
+          "claim": "Banks highlight the importance of anticipating the impact of emerging risks.",
+          "supported": true
+        },
+        {
+          "claim": "Banks highlight the importance of anticipating the impact of the pace of technological changes like AI.",
+          "supported": true
+        }
+      ]
+    },
+    "context_precision_detail": {
+      "verdicts": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  }
+]

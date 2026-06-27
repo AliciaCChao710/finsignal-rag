@@ -1,0 +1,11 @@
+# Keep the build context small. chroma_db/ (root) IS included on purpose.
+data/            # 227MB raw filings + chunks.json — not needed by the running app
+venv/
+.venv/
+.env             # secrets never go in the image; pass GEMINI_API_KEY at deploy time
+.git/
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pdf
+.DS_Store

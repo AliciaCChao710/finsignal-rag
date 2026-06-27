@@ -12,14 +12,14 @@ chromadb
 # Embeddings (free, runs locally)
 sentence-transformers
 
-# LLM
-anthropic
+# LLM (Google Gemini, free tier)
+google-genai
 
 # Dashboard
 streamlit
 
-# Evaluation
-ragas
+# Evaluation — ragas 0.4.x is incompatible with langchain 1.x, so evaluate.py
+# implements faithfulness + context precision directly via the Gemini judge (google-genai above)
 
 # Utilities
 python-dotenv

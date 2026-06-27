@@ -10,13 +10,14 @@ from sec_edgar_downloader import Downloader
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 log = logging.getLogger(__name__)
 
+# Scoped down: enough for a short report, keeping a "tech vs banks" sector contrast
 TICKERS = {
-    "tech": ["GOOGL", "AAPL", "MSFT", "META", "AMZN", "NVDA"],
-    "banks": ["JPM", "BAC", "WFC", "GS", "C", "MS"],
+    "tech": ["GOOGL", "MSFT", "NVDA"],
+    "banks": ["JPM", "GS", "BAC"],
 }
 RAW_DIR = Path(__file__).resolve().parents[1] / "data" / "raw"
 FILING_TYPE = "10-K"
-LIMIT = 3
+LIMIT = 1  # most recent 10-K per ticker (6 filings total)
 
 
 def load_env() -> tuple[str, str]:

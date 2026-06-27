@@ -2,7 +2,8 @@ venv/
 .env
 __pycache__/
 *.pyc
+# Raw SEC filings are large (~227MB) — do not commit
 data/raw/
-data/processed/
 *.pdf
-chroma_db/
+# NOTE: data/processed/chunks.json and chroma_db/ ARE committed on purpose,
+# so the deployed Streamlit app has its vector store without re-downloading.
