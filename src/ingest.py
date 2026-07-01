@@ -77,7 +77,9 @@ def parse_filing(txt_path: Path, ticker: str) -> list[dict]:
     filing_date = extract_filing_date(txt_path)
     html = extract_html(txt_path)
     text = clean_text(html)
-    source = str(txt_path)
+    # Store a repo-relative path only — never the absolute local path, which
+    # would leak the machine username / Google Drive account into committed data.
+    source = str(txt_path.relative_to(Path(__file__).resolve().parents[1]))
     return chunk_text(text, ticker, accession, filing_date, source)
 
 
