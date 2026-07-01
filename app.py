@@ -13,6 +13,9 @@ import sys
 from pathlib import Path
 
 import streamlit as st
+from dotenv import load_dotenv
+
+load_dotenv()  # make GEMINI_API_KEY available locally; Cloud Run injects it as an env var
 
 # Make the modules in src/ importable when running from the repo root
 sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
@@ -20,6 +23,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
 from generate import generate_answer  # noqa: E402
 from retrieve import get_collection  # noqa: E402
 from retrieve_tfidf import retrieve as retrieve_tfidf  # noqa: E402  (sparse / TF-IDF baseline)
+from evaluate import context_precision  # noqa: E402  (LLM-judge relevance score)
 
 st.set_page_config(page_title="FinSignal RAG", page_icon="📊", layout="wide")
 
@@ -95,7 +99,11 @@ query = st.text_input(
     placeholder="e.g. Compare the main risks technology companies vs banks emphasise",
 )
 
-if st.button("Ask", type="primary") and query.strip():
+ask_col, cmp_col = st.columns([1, 2])
+ask_clicked = ask_col.button("Ask", type="primary")
+compare_clicked = cmp_col.button("Compare TF-IDF vs Embedding (scored)")
+
+if ask_clicked and query.strip():
     with st.spinner("Retrieving relevant passages..."):
         if method.startswith("TF-IDF"):
             hits = retrieve_tfidf(query, k=k, sector=sector)
@@ -117,5 +125,37 @@ if st.button("Ask", type="primary") and query.strip():
             f"distance {h['distance']:.3f}"
         ):
             st.write(h["text"])
+
+elif compare_clicked and query.strip():
+    with st.spinner("Retrieving with both methods and scoring with the LLM judge..."):
+        collection = load_collection()
+        emb_hits = search(collection, query, k=k, sector=sector)
+        cp_emb, _ = context_precision(query, [h["text"] for h in emb_hits])
+        tfidf_hits = retrieve_tfidf(query, k=k, sector=sector)
+        cp_tfidf, _ = context_precision(query, [h["text"] for h in tfidf_hits])
+
+    st.subheader("Context precision — higher = more relevant retrieval")
+    m1, m2 = st.columns(2)
+    m1.metric("Embedding (dense · W3)", f"{cp_emb:.2f}")
+    m2.metric("TF-IDF (sparse · W2)", f"{cp_tfidf:.2f}")
+    st.caption(
+        "Scored live by an LLM judge (non-deterministic): the numbers indicate "
+        "direction, not a precise ranking, and vary slightly between runs."
+    )
+
+    pcol1, pcol2 = st.columns(2)
+    with pcol1:
+        st.markdown(f"**Embedding passages ({len(emb_hits)})**")
+        for i, h in enumerate(emb_hits, 1):
+            m = h["metadata"]
+            with st.expander(f"[{i}] {m['ticker']} ({m['sector']}) · dist {h['distance']:.3f}"):
+                st.write(h["text"])
+    with pcol2:
+        st.markdown(f"**TF-IDF passages ({len(tfidf_hits)})**")
+        for i, h in enumerate(tfidf_hits, 1):
+            m = h["metadata"]
+            with st.expander(f"[{i}] {m['ticker']} ({m['sector']}) · dist {h['distance']:.3f}"):
+                st.write(h["text"])
+
 elif query == "":
-    st.info("Enter a question above and click **Ask**.")
+    st.info("Enter a question above, then click **Ask** or **Compare**.")
