@@ -19,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
 
 from generate import generate_answer  # noqa: E402
 from retrieve import get_collection  # noqa: E402
+from retrieve_tfidf import retrieve as retrieve_tfidf  # noqa: E402  (sparse / TF-IDF baseline)
 
 st.set_page_config(page_title="FinSignal RAG", page_icon="📊", layout="wide")
 
@@ -81,6 +82,7 @@ with st.sidebar:
     sector_label = st.radio("Sector filter", ["All", "Tech", "Banks"], index=0)
     sector = {"All": None, "Tech": "tech", "Banks": "banks"}[sector_label]
     k = st.slider("Passages to retrieve (k)", min_value=3, max_value=10, value=6)
+    method = st.radio("Retrieval method", ["Embedding (dense)", "TF-IDF (sparse)"], index=0)
     st.markdown(
         "**Sample questions**\n"
         "- Compare the main risks for tech vs banks\n"
@@ -94,10 +96,12 @@ query = st.text_input(
 )
 
 if st.button("Ask", type="primary") and query.strip():
-    collection = load_collection()
-
     with st.spinner("Retrieving relevant passages..."):
-        hits = search(collection, query, k=k, sector=sector)
+        if method.startswith("TF-IDF"):
+            hits = retrieve_tfidf(query, k=k, sector=sector)
+        else:
+            collection = load_collection()
+            hits = search(collection, query, k=k, sector=sector)
 
     with st.spinner("Generating answer with Gemini..."):
         response = generate_answer(query, hits)
@@ -105,7 +109,7 @@ if st.button("Ask", type="primary") and query.strip():
     st.subheader("Answer")
     st.markdown(response)
 
-    st.subheader(f"Sources ({len(hits)} passages)")
+    st.subheader(f"Sources ({len(hits)} passages · {method})")
     for i, h in enumerate(hits, 1):
         m = h["metadata"]
         with st.expander(
