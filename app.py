@@ -86,7 +86,9 @@ with st.sidebar:
     sector_label = st.radio("Sector filter", ["All", "Tech", "Banks"], index=0)
     sector = {"All": None, "Tech": "tech", "Banks": "banks"}[sector_label]
     k = st.slider("Passages to retrieve (k)", min_value=3, max_value=10, value=6)
-    method = st.radio("Retrieval method", ["Embedding (dense)", "TF-IDF (sparse)"], index=0)
+    use_tfidf = st.toggle("Use TF-IDF (off = Embedding)", value=False)
+    method = "TF-IDF (sparse)" if use_tfidf else "Embedding (dense)"
+    st.caption(f"Active retriever: **{method}**")
     st.markdown(
         "**Sample questions**\n"
         "- Compare the main risks for tech vs banks\n"
