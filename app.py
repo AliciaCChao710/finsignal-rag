@@ -138,8 +138,8 @@ elif compare_clicked and query.strip():
 
     st.subheader("Context precision — higher = more relevant retrieval")
     m1, m2 = st.columns(2)
-    m1.metric("Embedding (dense · W3)", f"{cp_emb:.2f}")
-    m2.metric("TF-IDF (sparse · W2)", f"{cp_tfidf:.2f}")
+    m1.metric("Embedding (dense)", f"{cp_emb:.2f}")
+    m2.metric("TF-IDF (sparse)", f"{cp_tfidf:.2f}")
     st.caption(
         "Scored live by an LLM judge (non-deterministic): the numbers indicate "
         "direction, not a precise ranking, and vary slightly between runs."

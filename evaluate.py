@@ -44,14 +44,21 @@ TEST_QUESTIONS: list[tuple[str, str | None]] = [
 ]
 
 
-def _judge(prompt: str) -> dict:
-    """Call Gemini and parse a JSON object back (with one retry on rate limit)."""
+def _judge(prompt: str, max_attempts: int = 5) -> dict:
+    """Call Gemini and parse a JSON object back.
+
+    Retries transient failures — 429 rate limits and 5xx / UNAVAILABLE
+    "model is experiencing high demand" spikes (common on the free tier) — with
+    exponential backoff + jitter. Errors that won't fix themselves (depleted
+    prepay balance, invalid API key) are raised immediately instead of retried.
+    """
     from google import genai
     from google.genai import types
     import os
+    import random
 
     client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
-    for attempt in range(2):
+    for attempt in range(max_attempts):
         try:
             resp = client.models.generate_content(
                 model=MODEL,
@@ -59,12 +66,25 @@ def _judge(prompt: str) -> dict:
                 config=types.GenerateContentConfig(response_mime_type="application/json"),
             )
             return json.loads(resp.text)
-        except Exception as exc:  # rate limit or transient error
-            if attempt == 0 and "429" in str(exc):
-                log.warning("Rate limited, waiting 45s then retrying...")
-                time.sleep(45)
-                continue
-            raise
+        except Exception as exc:
+            msg = str(exc)
+            # Non-transient — retrying can't help, so surface it right away.
+            if "prepayment" in msg.lower() or "API key not valid" in msg:
+                raise
+            retryable = (
+                any(code in msg for code in ("429", "500", "503"))
+                or "UNAVAILABLE" in msg
+                or "RESOURCE_EXHAUSTED" in msg
+                or "overloaded" in msg.lower()
+            )
+            if not retryable or attempt == max_attempts - 1:
+                raise
+            wait = min(2 ** attempt + random.random(), 30)
+            log.warning(
+                "Gemini transient error (%s); retry %d/%d in %.1fs",
+                msg[:80], attempt + 1, max_attempts - 1, wait,
+            )
+            time.sleep(wait)
 
 
 def faithfulness(answer: str, contexts: list[str]) -> tuple[float, dict]:
